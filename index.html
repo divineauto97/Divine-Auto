@@ -2,112 +2,687 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title></title>
-<style>
-:root{--navy:#0b1425;--silver:#dce3ed;--orange:#ff8a32}
-*{box-sizing:border-box}
-body{margin:0;background:#f5f7fa;color:#172238;font-family:Arial,sans-serif}
-header{background:var(--navy);color:white;padding:19px 3%;border-bottom:3px solid var(--orange)}
-.logo{font-size:32px;font-weight:900;letter-spacing:3px}
-.logo span{color:var(--orange)}
-.logo img {
-  width: 420px;
-  height: 150px;
-  object-fit: contain;
-  object-position: left center;
-  display: block;
-}
-.tag{font-size:11px;letter-spacing:2px;color:#c4cede;margin-top:7px}
-nav{margin-top:22px;display:flex;gap:20px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-size:13px}
-.hero{background:linear-gradient(120deg,#0b1425,#233a5c);color:white;padding:55px 6%}
-.hero small{color:var(--orange);letter-spacing:3px;font-weight:bold}
-h1{font-size:clamp(34px,7vw,56px);line-height:1.08;margin:18px 0}
-.hero p{color:#d1d9e6;line-height:1.8;max-width:500px}
-.btn{display:inline-block;background:var(--orange);color:#101a2b;text-decoration:none;padding:14px 20px;border-radius:4px;font-weight:bold;margin-top:12px}
-section{padding:38px 6%}
-h2{font-size:27px;margin-bottom:8px}
-.sub{color:#687487;line-height:1.6}
-.cars{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:25px}
-.card{background:white;border:1px solid #dfe5ec;border-radius:9px;overflow:hidden}
-.carimg{height:145px;background:#e4eaf1;display:grid;place-items:center;font-size:48px}
-.info{padding:18px}
-.info h3{margin:0 0 9px}
-.price{font-size:22px;font-weight:bold;color:#132b4c}
-.details{font-size:13px;color:#697588;line-height:1.8}
-.contact{background:#e7edf5;text-align:center;padding:42px 6%}
-footer{background:var(--navy);color:#bdc7d6;padding:25px 6%;font-size:12px;line-height:1.8}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10233f">
+  <meta name="description" content="DIVINE AUTO - Cari kereta terpakai pilihan anda dengan urusan yang mudah.">
+  <title>DIVINE AUTO | Find Your Next Car</title>
+
+  <style>
+    :root {
+      --navy: #10233f;
+      --navy2: #18385d;
+      --orange: #f28c28;
+      --silver: #eef1f5;
+      --white: #ffffff;
+      --text: #1b2738;
+      --muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #f7f8fa;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 12px 5%;
+      border-bottom: 3px solid var(--orange);
+    }
+
+    .navbar {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand img {
+      display: block;
+      width: 155px;
+      max-height: 65px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .brand-name {
+      color: white;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .brand-name span {
+      color: var(--orange);
+    }
+
+    .brand-tagline {
+      font-size: 9px;
+      color: #d4dce7;
+      letter-spacing: 1.5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--orange);
+    }
+
+    .nav-cta {
+      background: var(--orange);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #10233f, #1b426b);
+      color: white;
+      padding: 65px 5% 75px;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .eyebrow {
+      color: #ffb15c;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      color: #dbe4ef;
+      max-width: 510px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      padding: 13px 20px;
+      border-radius: 7px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .hero-panel {
+      background: white;
+      color: var(--text);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 15px 40px #0002;
+    }
+
+    .hero-panel h2 {
+      color: var(--navy);
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .hero-panel p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #dbe1e8;
+      border-radius: 7px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      background: white;
+      color: var(--text);
+    }
+
+    .hero-panel .btn {
+      width: 100%;
+      font-size: 15px;
+    }
+
+    section {
+      padding: 55px 5%;
+      scroll-margin-top: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(25px, 3vw, 34px);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .stock-tools {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 12px;
+      margin-bottom: 25px;
+    }
+
+    .stock-tools input,
+    .stock-tools select {
+      margin: 0;
+    }
+
+    .stock-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .car-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e7ebf0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .car-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px #10233f12;
+    }
+
+    .car-photo {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: var(--silver);
+    }
+
+    .car-info {
+      padding: 18px;
+    }
+
+    .car-info h3 {
+      color: var(--navy);
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .car-meta {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 7px 0 12px;
+    }
+
+    .car-price {
+      color: var(--orange);
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .car-info .btn {
+      display: block;
+      text-align: center;
+    }
+
+    .empty {
+      grid-column: 1 / -1;
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .trust {
+      background: white;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .trust-card {
+      padding: 25px;
+      background: #f7f8fa;
+      border-radius: 12px;
+      border-top: 3px solid var(--orange);
+    }
+
+    .trust-card .symbol {
+      font-size: 27px;
+      margin-bottom: 10px;
+    }
+
+    .trust-card h3 {
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .trust-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .contact {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin-bottom: 12px;
+    }
+
+    .contact p {
+      color: #dbe4ef;
+      margin-bottom: 23px;
+    }
+
+    footer {
+      background: #0a1729;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 25px 5%;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    footer .tagline {
+      color: var(--orange);
+      letter-spacing: 1px;
+      margin: 5px 0;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .brand img {
+        width: 145px;
+        max-height: 55px;
+        object-position: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 17px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 45px 5%;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .stock-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .car-info {
+        padding: 12px;
+      }
+
+      .car-info h3 {
+        font-size: 15px;
+      }
+
+      .car-price {
+        font-size: 18px;
+      }
+
+      .car-info .btn {
+        font-size: 12px;
+        padding: 11px 6px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stock-tools {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .stock-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header>
-  <div class="logo">
-<img src="dva-logo.png.PNG" alt="DIVINE AUTO">
-</div>
-  <div style="font-weight:bold;letter-spacing:2px;margin-top:5px"></div>
-  <div class="tag"></div>
-  <nav>
-    <a href="#home">HOME</a>
-    <a href="#stock">OUR STOCK</a>
-    <a href="#about">ABOUT US</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
-</header>
-<div class="hero" id="home">
-  <small>YOUR TRUSTED CAR PARTNER</small>
-  <h1>FIND YOUR<br>NEXT CAR.</h1>
-  <p>Discover your next ride with DIVINE AUTO. Pilihan kereta terpakai, harga berpatutan dan layanan yang boleh dipercayai.</p>
-  <a class="btn" href="#stock">EXPLORE OUR STOCK →</a>
-</div>
-<section id="stock">
-  <h2>Featured Vehicles</h2>
-  <p class="sub">Pilihan kereta untuk perjalanan seterusnya.</p>
-  <div class="cars">
-    <div class="card">
-      <div class="carimg">🚘</div>
-      <div class="info">
-        <h3>Perodua Myvi</h3>
-        <div class="price">Ask for price</div>
-        <p class="details">Year: To be updated<br>Transmission: Automatic<br>Condition: To be updated</p>
-        <a class="btn" href="#contact">ENQUIRE NOW</a>
-      </div>
+  <header>
+    <div class="navbar">
+      <a class="brand" href="#home" aria-label="DIVINE AUTO home">
+        <img src="dva-logo.png.PNG" alt="DIVINE AUTO"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <div style="display:none">
+          <div class="brand-name">D<span>V</span>A</div>
+          <div class="brand-tagline">DRIVEN BY TRUST</div>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#home">HOME</a>
+        <a href="#stock">OUR STOCK</a>
+        <a href="#about">ABOUT US</a>
+        <a class="nav-cta" href="#contact">CONTACT US</a>
+      </nav>
     </div>
-    <div class="card">
-      <div class="carimg">🚙</div>
-      <div class="info">
-        <h3>Honda City</h3>
-        <div class="price">Ask for price</div>
-        <p class="details">Year: To be updated<br>Transmission: Automatic<br>Condition: To be updated</p>
-        <a class="btn" href="#contact">ENQUIRE NOW</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">DIVINE AUTO • DVA</div>
+          <h1>Find Your<br>Next Car.</h1>
+          <p>
+            Cari kereta yang sesuai untuk perjalanan anda.
+            Terokai pilihan kereta terpakai dan hubungi kami
+            untuk mendapatkan maklumat lanjut.
+          </p>
+          <a class="btn" href="#stock">EXPLORE OUR STOCK ↗</a>
+        </div>
+
+        <div class="hero-panel">
+          <h2>Find Your Perfect Car</h2>
+          <p>Mulakan carian kereta pilihan anda di sini.</p>
+
+          <form id="searchForm">
+            <input id="heroSearch" type="search"
+              placeholder="Cari model, contoh: Myvi, Honda City">
+
+            <select id="heroBrand">
+              <option value="">Semua jenama</option>
+              <option>Perodua</option>
+              <option>Proton</option>
+              <option>Honda</option>
+              <option>Toyota</option>
+              <option>BMW</option>
+              <option>Mercedes-Benz</option>
+              <option>Chery</option>
+              <option>OMODA</option>
+            </select>
+
+            <button class="btn" type="submit">CARI KERETA</button>
+          </form>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="carimg">🚗</div>
-      <div class="info">
-        <h3>Your Next Car</h3>
-        <div class="price">Coming soon</div>
-        <p class="details">Our latest stock will be listed here.</p>
-        <a class="btn" href="#contact">ENQUIRE NOW</a>
+    </section>
+
+    <section id="stock">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Available Stock</h2>
+            <p>Temui kereta yang sesuai dengan keperluan anda.</p>
+          </div>
+        </div>
+
+        <div class="stock-tools">
+          <input id="stockSearch" type="search"
+            placeholder="Cari nama kereta atau varian...">
+
+          <select id="stockBrand">
+            <option value="">Semua jenama</option>
+            <option>Perodua</option>
+            <option>Proton</option>
+            <option>Honda</option>
+            <option>Toyota</option>
+            <option>BMW</option>
+            <option>Mercedes-Benz</option>
+            <option>Chery</option>
+            <option>OMODA</option>
+          </select>
+        </div>
+
+        <div class="stock-grid" id="stockGrid"></div>
       </div>
-    </div>
-  </div>
-</section>
-<section id="about">
-  <h2>Driven by Trust.</h2>
-  <p class="sub">DIVINE AUTO komited membantu anda mencari kereta yang sesuai dengan keperluan dan bajet anda. Your next car, our commitment.</p>
-</section>
-<div class="contact" id="contact">
-  <h2>Let's Find Your Next Car.</h2>
-  <p class="sub">Berminat dengan kereta kami? Hubungi team DIVINE AUTO.</p>
-  <a class="btn" href="https://wa.me/60123456789?text=Hi%20DIVINE%20AUTO%2C%20saya%20berminat%20nak%20tahu%20stok%20kereta." target="_blank">CHAT ON WHATSAPP</a>
-  <p style="font-size:12px;color:#687487">Gantikan nombor WhatsApp contoh dengan nombor rasmi DIVINE AUTO.</p>
-</div>
-<footer>
-  <strong style="color:white">DIVINE AUTO | DVA</strong><br>
-  Driven by Trust. Powered by Passion.<br>
-  © 2026 DIVINE AUTO. All rights reserved.
-</footer>
+    </section>
+
+    <section class="trust" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Why DIVINE AUTO?</h2>
+            <p>Komitmen kami dalam membantu anda mencari kereta.</p>
+          </div>
+        </div>
+
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="symbol">🛡️</div>
+            <h3>Driven by Trust</h3>
+            <p>Kami mengutamakan komunikasi yang jelas dan layanan yang profesional.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="symbol">🚘</div>
+            <h3>Choices for You</h3>
+            <p>Terokai pelbagai model dan pilihan kereta mengikut keperluan anda.</p>
+          </div>
+
+          <div class="trust-card">
+            <div class="symbol">💬</div>
+            <h3>Easy Enquiries</h3>
+            <p>Hubungi kami untuk bertanya tentang harga, stok dan pilihan pembiayaan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <h2>Looking for Your Next Car?</h2>
+        <p>Beritahu kami kereta yang anda cari. Kami sedia membantu.</p>
+        <a class="btn" id="contactWhatsApp" target="_blank"
+          rel="noopener">CHAT WITH US ON WHATSAPP ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>DIVINE AUTO | DVA</strong>
+    <div class="tagline">DRIVEN BY TRUST. POWERED BY PASSION.</div>
+    <div>NEW • USED • TRADE-IN • FINANCE • INSURANCE</div>
+    <p style="margin-top:12px">© <span id="year"></span> DIVINE AUTO. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const whatsappNumber = "60105270997";
+
+    // GANTIKAN contoh di bawah dengan stok sebenar DIVINE AUTO.
+    // Harga contoh tidak dipaparkan sebagai stok sebenar.
+    const cars = [
+      {
+        name: "Perodua Myvi",
+        brand: "Perodua",
+        year: "2022",
+        variant: "Pilih varian",
+        price: 0,
+        image: "https://placehold.co/640x400/eef1f5/10233f?text=Perodua+Myvi"
+      },
+      {
+        name: "Honda City Hatchback",
+        brand: "Honda",
+        year: "2024",
+        variant: "V 1.5",
+        price: 0,
+        image: "https://placehold.co/640x400/eef1f5/10233f?text=Honda+City+Hatchback"
+      },
+      {
+        name: "Perodua Axia",
+        brand: "Perodua",
+        year: "2023",
+        variant: "AV",
+        price: 0,
+        image: "https://placehold.co/640x400/eef1f5/10233f?text=Perodua+Axia"
+      }
+    ];
+
+    const stockGrid = document.getElementById("stockGrid");
+    const stockSearch = document.getElementById("stockSearch");
+    const stockBrand = document.getElementById("stockBrand");
+    const heroSearch = document.getElementById("heroSearch");
+    const heroBrand = document.getElementById("heroBrand");
+
+    function whatsappLink(carName) {
+      const message = "Hi DIVINE AUTO! Saya berminat dengan " +
+        carName + ". Boleh bantu saya dengan maklumat lanjut?";
+      return "https://wa.me/" + whatsappNumber +
+        "?text=" + encodeURIComponent(message);
+    }
+
+    function renderCars() {
+      const query = stockSearch.value.trim().toLowerCase();
+      const brand = stockBrand.value.toLowerCase();
+
+      const filtered = cars.filter(car => {
+        const matchesQuery =
+          (car.name + " " + car.variant + " " + car.year)
+          .toLowerCase().includes(query);
+
+        const matchesBrand =
+          !brand || car.brand.toLowerCase() === brand;
+
+        return matchesQuery && matchesBrand;
+      });
+
+      if (!filtered.length) {
+        stockGrid.innerHTML =
+          '<div class="empty">Tiada kereta ditemui. Cuba carian lain.</div>';
+        return;
+      }
+
+      stockGrid.innerHTML = filtered.map(car => {
+        const priceText = car.price > 0
+          ? "RM " + car.price.toLocaleString("en-MY")
+          : "Tanya Harga";
+
+        return `
+          <article class="car-card">
+            <img class="car-photo"
+              src="${car.image}"
+              alt="${car.name}"
+              loading="lazy">
+            <div class="car-info">
+              <h3>${car.name}</h3>
+              <div class="car-meta">
+                ${car.year} · ${car.variant}
+              </div>
+              <div class="car-price">${priceText}</div>
+              <a class="btn" href="${whatsappLink(car.name)}"
+                target="_blank" rel="noopener">
+                TANYA DI WHATSAPP
+              </a>
+            </div>
+          </article>`;
+      }).join("");
+    }
+
+    stockSearch.addEventListener("input", renderCars);
+    stockBrand.addEventListener("change", renderCars);
+
+    document.getElementById("searchForm").addEventListener("submit", event => {
+      event.preventDefault();
+      stockSearch.value = heroSearch.value;
+      stockBrand.value = heroBrand.value;
+      renderCars();
+      document.getElementById("stock").scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+
+    document.getElementById("contactWhatsApp").href =
+      whatsappLink("kereta yang tersedia");
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    renderCars();
+  </script>
 </body>
 </html>
